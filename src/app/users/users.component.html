@@ -1,24 +1,25 @@
 <body>
     
 <div class="container">
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+  <h1>Users</h1>
+  <!-- <form role="search">
+    <input [formControl]="search"  id="value" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="button" (click)="Search()">Search</button>
+  </form> -->
 
     <table class="table">
       <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Profile Image</th>
-        <th scope="col">Username</th>
-        <th scope="col">User Type</th>
-        <th scope="col">Action</th>
+        <th>id</th>
+        <th>Profile Image</th>
+        <th>Username</th>
+        <th>User Type</th>
+        <th>Action</th>
       </tr>
       </thead>
       <tbody >
         <tr *ngFor="let items of users, let i=index let c=count">
-            <td>{{i+1}}</td>
+            <td>{{items.id}}</td>
             <td><img src="{{items.avatar_url}}"></td>
             <td>{{items.login}}</td>
             <td>{{items.type}}</td>
@@ -29,7 +30,7 @@
    
   <div class="btns">
     <button (click)="Next()">Next</button>
-    <button>Previous</button>
+    <button (click)="Back()">Previous</button>
   </div>
 </div>
 

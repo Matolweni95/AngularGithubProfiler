@@ -27,6 +27,18 @@ export class ReposComponent implements OnInit {
     })
   }
 
+  Back(){
+    this.i--;
+    if(this.i <= 0){
+      this.i = 1
+    }
+    this.http.getUserRepos(this.username, this.i).subscribe((res: any) => {
+    this.pages = res;
+    this.repos = this.pages;
+    console.log(res)
+    })
+  }
+
 
   getRepos(name: any, i:any){
     this.placeholder = this.username;

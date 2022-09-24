@@ -1,32 +1,32 @@
 <body>   
   <div class="container">
+    <h1>Repos</h1>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">No</th>
-          <th scope="col">Repo Name</th>
-          <th scope="col">Updated At</th>
-          <th scope="col">Issues</th>
-          <th scope="col">Forks#</th>
-          <th scope="col">View</th>
+          <th>id</th>
+          <th>Repo Name</th>
+          <th>Updated At</th>
+          <th>Issues</th>
+          <th>Forks#</th>
+          <th>View</th>
         </tr>
         </thead>
         <tbody >
           <tr *ngFor="let items of repos, let i=index let c=count">
-            <td>{{i+1}}</td>
+            <td>{{items.id}}</td>
             <td>{{items.name}}</td>
-            <td>{{items.updated_at}}</td>
+            <td>{{items.updated_at | date:'medium'}}</td>
             <td>{{items.open_issues}}</td>
             <td>{{items.forks}}</td>
-            <td><button>Go to Repo</button></td>
-            <td><img src="{{items.avatar_url}}"></td>
+            <td><button routerLink ="/{{items.owner.login}}/{{items.name}}">View</button></td>
           </tr>
         </tbody>
     </table>
       
     <div class="btns">
       <button (click) = "Next()">Next</button>
-      <button>Previous</button>
+      <button (click)="Back()">Previous</button>
     </div>
   </div>    
 </body>

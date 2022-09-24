@@ -27,6 +27,18 @@ export class FollowingComponent implements OnInit {
     })
   }
 
+  Back(){
+    this.i--;
+    if(this.i <= 0){
+      this.i = 1
+    }
+    this.http.getUserFollowing(this.username, this.i).subscribe((res: any) => {
+      this.pages = res;
+      this.following = this.pages;
+      console.log(res)
+      })
+  }
+
   getFollowing(name: any, i:any){
     this.placeholder = this.username;
     this.http.getUserFollowing(name, this.i).subscribe((res:any) => {

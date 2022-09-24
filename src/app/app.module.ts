@@ -9,8 +9,8 @@ import { FollowersComponent } from './followers/followers.component';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';  
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { RepodetailsComponent } from './repodetails/repodetails.component';  
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     FollowingComponent,
     FollowersComponent,
     UsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    RepodetailsComponent
   ],
   imports: [
     BrowserModule,

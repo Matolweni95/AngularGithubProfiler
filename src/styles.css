@@ -1,66 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    margin: 0px;
+   margin: 0px;
 }
 
 img {
-    width: 50px;
+   width: 100px;
+   border-radius: 50%;
 }
+
+body { 
+   height: 100%;
+   margin-bottom: 50px;
+}
+
+* {
+    box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
 body {
-    background-color: #9b89b3;
-    height: 1000%;
-    margin-bottom: 0;
+   font-family: Helvetica;
+   -webkit-font-smoothing: antialiased;
+   background: rgba( 71, 147, 227, 1);
 }
-body { margin: 0; font-family:Roboto, sans-serif; }
- /*** Table Styles **/
- 
- .table-fill {
-    background: white;
-    border-radius:3px;
-    border-collapse: collapse;
-    height: 320px;
-    margin: auto;
-    max-width: 600px;
-    padding:5px;
-    width: 100%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    animation: float 5s infinite;
- }
-   
- th {
-    color:#D5DDE5;;
-    background:#1b1e24;
-    border-bottom:4px solid #9ea7af;
-    border-right: 1px solid #343a45;
-    font-size:23px;
-    font-weight: 100;
-    padding:24px;
-    text-align:left;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    vertical-align:middle;
- }
-    
- tr {
-    border-top: 1px solid #C1C3D1;
-    border-bottom: 1px solid #C1C3D1;
-    color:#666B85;
-    font-size:16px;
-    font-weight:normal;
-    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
- }
-   
- tr:nth-child(odd) td {
-    background:#EBEBEB;
- }
-   
- td {
-    background:#FFFFFF;
-    padding:20px;
-    text-align:left;
-    vertical-align:middle;
-    font-weight:300;
-    font-size:18px;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-    border-right: 1px solid #C1C3D1;
- }
- 
+
+h2 {
+   text-align: center;
+   font-size: 18px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: white;
+   padding: 30px 0;
+}
+
+h1, p {
+   text-align: center;
+   font-family: Avenir, Helvetica, Arial, sans-serif;
+   color: #2c3e50;
+}
+
+.container h1 {
+   margin: 50px 0px;
+}
+
+/* Table Styles */
+
+table {
+   margin: 10px 70px 70px;
+   box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+table {
+
+   border-radius: 5px;
+   font-size: 12px;
+   font-weight: normal;
+   border: none;
+   border-collapse: collapse;
+   width: 1200px;
+   max-width: 100%;
+   white-space: wrap;
+   background-color: white;
+}
+
+table td, table th {
+   text-align: center;
+   padding: 25px;
+   color: #2c3e50;
+
+}
+
+table td {
+   border-right: 1px solid #f8f8f8;
+   font-size: 12px;
+}
+
+thead th {
+   color: #ffffff;
+   background: #324960;
+}
+
+button {
+   border: none;
+   padding: 9px;
+   width: 150px;
+   cursor: pointer;
+   border-radius: 5px;
+   color: #fff;
+   box-shadow: 0 0 40px 40px #4FC3A1 inset, 0 0 0 0 #4FC3A1;
+}
+
+.btns {
+   display: flex;
+   justify-content: center;
+   gap:50px;
+}

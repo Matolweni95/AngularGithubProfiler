@@ -1,9 +1,11 @@
 <body>
-    
-    <div class="container mt-5">
-        <div class="avatar d-flex justify-content-center" *ngFor="let items of details">
-            <div class="avatar-container d-flex flex-column">
-                <img class="avatar-hero" src="{{items.avatar_url}}">
+    <div class="container">
+      <h1>User Details</h1>
+        <div class="avatar" *ngFor="let items of details">
+          <div class="hero-img">
+            <img class="avatar-hero" src="{{items.avatar_url}}">
+          </div>
+            <div class="avatar-container">
                 <div class="info">
                     <p>{{items.name}}</p>
                     <p>{{items.bio}}</p>
@@ -14,11 +16,11 @@
         <table class="table mt-5">
           <thead>
           <tr>
-            <th scope="col">Username</th>
-            <th scope="col"><button [routerLink] = "'followers'">Followers<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg></button></th>
-            <th scope="col"><button [routerLink] = "'following'">Following<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg></button></th>
-            <th scope="col"><button [routerLink] = "'repos'">Repo #<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg></button></th>
-            <th scope="col"><button [routerLink] = "'gists'">Gists #<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg></button></th>
+            <th>Username</th>
+            <th><button [routerLink] = "'followers'">Followers</button></th>
+            <th><button [routerLink] = "'following'">Following</button></th>
+            <th><button [routerLink] = "'repos'">Repo #</button></th>
+            <th><button [routerLink] = "'gists'">Gists #</button></th>
           </tr>
           </thead>
           <tbody >

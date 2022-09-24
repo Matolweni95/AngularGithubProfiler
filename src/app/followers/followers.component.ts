@@ -23,9 +23,23 @@ export class FollowersComponent implements OnInit {
     this.http.getUserFollowers(this.username, this.i).subscribe((res: any) => {
     this.pages = res;
     this.followers = this.pages;
-    console.log(res)
+    console.log(this.i)
     })
   }
+
+  Back(){
+    this.i--;
+    if(this.i <= 0){
+      this.i = 1
+    }
+    this.http.getUserFollowers(this.username, this.i).subscribe((res: any) => {
+    this.pages = res;
+    this.followers = this.pages;
+    console.log(this.i)
+    })
+  }
+
+  
 
   getFollowers(name: any, i: any){
     this.placeholder = this.username;

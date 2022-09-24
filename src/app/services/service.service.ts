@@ -40,5 +40,9 @@ export class ServiceService {
   getUserGists(name:any, value:any){
     return this.http.get(`https://api.github.com/users/${name}/gists?q=test&page=${value}&per_page=10`)
   }
+
+  getRepoDetails(name:any, reponame:any){
+    return this.http.get(`https://api.github.com/repos/${name}/${reponame}`)
+  }
   
 }

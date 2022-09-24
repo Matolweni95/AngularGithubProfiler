@@ -6,6 +6,7 @@ import { FollowingComponent } from './following/following.component';
 import { FollowersComponent } from './followers/followers.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { RepodetailsComponent } from './repodetails/repodetails.component';  
 
 const routes: Routes = [
   {path: '', component: UsersComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: ':username/gists', component:GistsComponent },
   {path: ':username/repos', component:ReposComponent },
   {path: ':username/following', component: FollowingComponent },
+  {path: ':username/:repo', component: RepodetailsComponent },
   
 ];
 

@@ -26,6 +26,18 @@ export class GistsComponent implements OnInit {
     })
   }
 
+  Back(){
+    this.i--;
+    if(this.i <= 0){
+      this.i = 1
+    }
+    this.http.getUserGists(this.username, this.i).subscribe((res: any) => {
+    this.pages = res;
+    this.gists = this.pages;
+    console.log(res)
+    })
+  }
+
   getGists(name: any, i:any){
     this.placeholder = this.username;
     this.http.getUserGists(name, this.i).subscribe((res:any) => {
