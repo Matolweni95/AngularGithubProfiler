@@ -2,10 +2,12 @@
     
 <div class="container">
   <h1>Users</h1>
-  <!-- <form role="search">
-    <input [formControl]="search"  id="value" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="button" (click)="Search()">Search</button>
-  </form> -->
+  <form [formGroup]="FormGroup">
+    <div class="search" appearance="fill">
+        <input formControlName="search" placeholder="Enter Username">    
+        <div class="icon"><button (click)="search(FormGroup)">search</button></div>         
+    </div>
+  </form>
 
     <table class="table">
       <thead>

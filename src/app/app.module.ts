@@ -28,7 +28,8 @@ import { RepodetailsComponent } from './repodetails/repodetails.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,  
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

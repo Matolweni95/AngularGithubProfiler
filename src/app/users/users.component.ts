@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../services/service.service';
-import { FormGroup,  FormBuilder } from '@angular/forms';
 import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -9,14 +11,18 @@ import { FormControl } from '@angular/forms';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private http: ServiceService, private _fb: FormBuilder) { 
+  FormGroup!: FormGroup;
+
+  constructor(private http: ServiceService, private fb: FormBuilder, private router: Router) { 
+    this.FormGroup = this.fb.group({
+      search: ['', Validators.required]
+    });
     
   }
 
-  search: FormControl = new FormControl('');
-
   users:any = [];
   userArr:any = [];
+  searchedUser:any;
 
   getUsers() {
     this.http.getUserList().subscribe((res:any) => {
@@ -49,9 +55,21 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  Search(){
-    const value = this.search.value;
-    console.log(value)
+  search(FormGroup: { value: { search: any }})
+  {    
+    if(FormGroup.value.search === ''){
+      alert('Please enter a avalid username')
+    }else if(FormGroup.value.search != ''){
+    this.http.searchUser(FormGroup.value.search).subscribe((res:any) => {
+      this.searchedUser = res.login;
+      this.router.navigateByUrl('/' + this.searchedUser)
+      console.log(this.searchedUser)
+    },(error:any)=>{
+      if(error.status === 404) {
+        alert('User does not exist, please try valid username')
+      }
+    })
+  }
   }
 
   ngOnInit(): void {

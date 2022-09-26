@@ -44,5 +44,9 @@ export class ServiceService {
   getRepoDetails(name:any, reponame:any){
     return this.http.get(`https://api.github.com/repos/${name}/${reponame}`)
   }
+
+  searchUser(name: any){
+    return this.http.get(`https://api.github.com/users/${name}`)
+  }
   
 }
