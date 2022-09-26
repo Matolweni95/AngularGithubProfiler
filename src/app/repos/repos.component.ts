@@ -11,7 +11,6 @@ export class ReposComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private http:ServiceService) { }
   username!:any
-  placeholder!:any;
   repos:any = [];
   pages:any = [];
 
@@ -41,8 +40,7 @@ export class ReposComponent implements OnInit {
 
 
   getRepos(name: any, i:any){
-    this.placeholder = this.username;
-    this.http.getUserRepos(name, this.i).subscribe((res:any) => {
+    this.http.getUserRepos(name, i).subscribe((res:any) => {
     this.repos = res;
     console.log(this.repos)
     })

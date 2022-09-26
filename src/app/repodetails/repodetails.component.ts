@@ -11,14 +11,12 @@ export class RepodetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private http:ServiceService) { }
   username!:any
   repo!:any;
-  placeholder!:any;
   repodetails:any = [];
   details:any = [];
 
   myDate: Date = new Date();
 
   getRepoDetails(name: any, repo:any){
-    this.placeholder = this.username;
     this.http.getRepoDetails(name, repo).subscribe((res:any) => {
     this.repodetails = res;
     this.details.push(this.repodetails)

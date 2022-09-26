@@ -11,7 +11,6 @@ export class FollowingComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private http:ServiceService) { }
   username!:any
-  placeholder!:any;
   following:any = [];
   pages:any = [];
 
@@ -40,8 +39,7 @@ export class FollowingComponent implements OnInit {
   }
 
   getFollowing(name: any, i:any){
-    this.placeholder = this.username;
-    this.http.getUserFollowing(name, this.i).subscribe((res:any) => {
+    this.http.getUserFollowing(name, i).subscribe((res:any) => {
     this.following = res;
     console.log(this.following)
     })

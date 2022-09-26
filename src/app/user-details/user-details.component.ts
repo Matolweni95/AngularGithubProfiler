@@ -12,12 +12,10 @@ export class UserDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private http: ServiceService) { }
 
   username!:any;
-
   details:any = [];
-  placeholder!:any;
+
 
   getDetails(name: any){
-    this.placeholder = this.username;
     this.http.getUserDetails(name).subscribe((res:any) => {
     this.details.push(res);
     console.log(this.details)

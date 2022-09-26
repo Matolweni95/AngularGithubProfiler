@@ -10,7 +10,6 @@ export class GistsComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private http:ServiceService) { }
   username!:any
-  placeholder!:any;
   gists:any = [];
   pages:any = [];
 
@@ -39,8 +38,7 @@ export class GistsComponent implements OnInit {
   }
 
   getGists(name: any, i:any){
-    this.placeholder = this.username;
-    this.http.getUserGists(name, this.i).subscribe((res:any) => {
+    this.http.getUserGists(name, i).subscribe((res:any) => {
     this.gists = res;
     console.log(this.gists)
     })
